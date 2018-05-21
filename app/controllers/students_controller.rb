@@ -14,12 +14,19 @@ class StudentsController < ApplicationController
   end
 
 
+  # def create
+  #   params.inspect
+  #   @student = Student.create(student_params)
+  #   redirect_to student_path(@student)
+
+  # end
+
   def create
-    params.inspect
-    @student = Student.create(student_params)
+
+    @student = Student.create(first_name: params[:first_name], last_name: params[:last_name])
     redirect_to student_path(@student)
 
-  end
+  end 
 
   private
 
